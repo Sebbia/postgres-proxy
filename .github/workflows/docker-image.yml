@@ -27,12 +27,12 @@ jobs:
   build-latest:
     runs-on: ubuntu-latest
     env:
-      TAG: "latest"
+      TAG: "10.5-alpine"
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
         run: |
-          docker build . --file Dockerfile --tag ${IMAGE_NAME}:${TAG}
+          docker build . --file ${TAG}/Dockerfile --tag ${IMAGE_NAME}:${TAG}
       - name: Push image to Docker Hub
         run: |
           docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
