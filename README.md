@@ -17,3 +17,5 @@ Usage in `docker-compose.yml`:
       - DATABASES=users,events,files
       - SERVER_URL=db
 ```
+
+Sources: https://github.com/Sebbia/postgres-proxy
